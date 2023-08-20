@@ -1,0 +1,10 @@
+clone the repo
+install dependencies
+change directory to backend
+add necessary .env file
+in .env file add MONGO__URL
+hit nodemon
+/////////////////
+change directory to frontend
+install the dependencies
+hit npm start
