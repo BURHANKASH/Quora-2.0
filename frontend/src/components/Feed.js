@@ -11,7 +11,7 @@ function Feed() {
 
   useEffect(() => {
     axios
-    .get("https://quora-2-0-7puk.onrender.com")
+    .get("https://quora-2-0-7puk.onrender.com/questions")
       // .get("http://localhost:8000/questions")
       .then((res) => {
         console.log(res.data.reverse());
