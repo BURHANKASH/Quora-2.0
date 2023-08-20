@@ -41,7 +41,8 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 const firebaseConfig = {
   apiKey: "AIzaSyC9KdML-vToK_5XjEg-9I_FS_llZ6kwfkY",
   authDomain: "quora-2-0-99640.firebaseapp.com",
-  projectId: "quora-2-0-99640",
+  // authDomain: "quorabykash.netlify.app",
+  projectId: "quora-2-0-99640", 
   storageBucket: "quora-2-0-99640.appspot.com",
   messagingSenderId: "684147833462",
   appId: "1:684147833462:web:3451daa1858ff23a6c3d57",
