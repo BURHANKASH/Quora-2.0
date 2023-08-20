@@ -5,7 +5,6 @@ const answerDB = require("../model/Answer");
 
 router.post("/", async (req, res) => {
   try {
-   
     await answerDB
       .create({
         answer: req.body.answer,

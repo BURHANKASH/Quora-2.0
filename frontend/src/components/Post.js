@@ -52,7 +52,7 @@ function Post({ post }) {
         user: user,
       };
       await axios
-        .post("https://quora-2-mern.onrender.com/answers", body, config)
+        .post("http://localhost:8000/answers", body, config)
         .then((res) => {
           console.log(res.data);
           alert("Answer added succesfully");
@@ -68,13 +68,12 @@ function Post({ post }) {
   return (
     <div className="post">
       <div className="post__info">
-        <Avatar src={post?.user?.photo}/>
+        <Avatar src={post?.user?.photo} />
         <h4>{post?.user?.userName}</h4>
         <small>
           <LastSeen date={post?.createdAt} />
         </small>
       </div>
-
       <div className="post__body">
         <div className="post__question">
           <p>{post?.questionName}</p>
@@ -106,7 +105,6 @@ function Post({ post }) {
                 </span>
               </p>
             </div>
-
             <div className="modal__answer">
               <ReactQuill
                 vlaue={answer}
@@ -125,7 +123,6 @@ function Post({ post }) {
             </div>
           </Modal>
         </div>
-
         {post.questionUrl !== "" && <img src={post.questionUrl} alt="url" />}
       </div>
       <div className="post__footer">
@@ -158,54 +155,52 @@ function Post({ post }) {
         }}
         className="post__answer"
       >
-        
         {post?.allAnswers?.map((_a) => {
-          return(
-          <>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                width: "100%",
-                padding: "10px 5px",
-                borderTop: "1px solid lightgray",
-              }}
-              className="post-answer-container"
-            >
+          return (
+            <>
               <div
                 style={{
                   display: "flex",
-                  alignItems: "center",
-                  marginBottom: "10px",
-                  fontSize: "12px",
-                  fontWeight: 600,
-                  color: "#888",
+                  flexDirection: "column",
+                  width: "100%",
+                  padding: "10px 5px",
+                  borderTop: "1px solid lightgray",
                 }}
-                className="post-answered"
+                className="post-answer-container"
               >
-                <Avatar src={_a?.user?.photo}/>
                 <div
                   style={{
-                    margin: "0px 10px",
+                    display: "flex",
+                    alignItems: "center",
+                    marginBottom: "10px",
+                    fontSize: "12px",
+                    fontWeight: 600,
+                    color: "#888",
                   }}
-                  className="post-info"
+                  className="post-answered"
                 >
-                  {/* console.log(_a?.user?.userName) */}
-                  <p>{_a?.user?.userName}</p>
-                  <span>
-                    
-                    <LastSeen date={_a?.createdAt} />
-                  </span>
+                  <Avatar src={_a?.user?.photo} />
+                  <div
+                    style={{
+                      margin: "0px 10px",
+                    }}
+                    className="post-info"
+                  >
+                    {/* console.log(_a?.user?.userName) */}
+                    <p>{_a?.user?.userName}</p>
+                    <span>
+
+                      <LastSeen date={_a?.createdAt} />
+                    </span>
+                  </div>
                 </div>
+                <div className="post-answer">{ReactHtmlParser(_a?.answer)}</div>
               </div>
-              <div className="post-answer">{ReactHtmlParser(_a?.answer)}</div>
-            </div>
-          </>
+            </>
           )
         })}
       </div>
     </div>
   );
 }
-
 export default Post;

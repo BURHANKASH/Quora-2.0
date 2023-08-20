@@ -11,8 +11,8 @@ function Feed() {
 
   useEffect(() => {
     axios
-    .get("https://quora-2-0-7puk.onrender.com/questions")
-      // .get("http://localhost:8000/questions")
+    // .get("https://quora-2-0-7puk.onrender.com/questions")
+      .get("http://localhost:8000/questions")
       .then((res) => {
         console.log(res.data.reverse());
         setPosts(res.data);
@@ -28,11 +28,7 @@ function Feed() {
         {posts.map((post, index) => (
         <Post key={index} post={post} />
       ))}
-        {/* <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/> */}
+       
 
     </div>
   )

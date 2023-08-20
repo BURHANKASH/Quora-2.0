@@ -28,7 +28,6 @@ function Login() {
         <FaGoogle className="google-icon" />
            Continue With Google
         </button>
-        <p className="beta"></p>
         <p className="beta2" style={{fontSize:14}}> About . Careers . Privacy . Terms . Contact .Languages .Your Ad Choices . Press© Quora, Inc. 2023</p>
       </div>
     </div>
